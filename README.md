@@ -1,2 +1,2 @@
 # e8
-scripts associated with experiment 8 
+Scripts associated with experiment 8: mutation rate in response to stress 
