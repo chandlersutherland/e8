@@ -12,7 +12,8 @@
 
 module load bcftools/1.6 
 
-bcftools mpileup -Ov -o /global/scratch/users/chandlersutherland/20210831_pass_chopped.minimap2.sorted.mpileup.vcf \
+bcftools mpileup -Ov \
+	-o /global/scratch/users/chandlersutherland/20210831_pass_chopped.minimap2.sorted.mpileup.vcf \
 	-f /global/scratch/users/chandlersutherland/phytozome/Athaliana/Araport11/assembly/Athaliana_447_TAIR10.fa \
 	-d 200000 \
 	-a FORMAT/AD,FORMAT/ADF,FORMAT/ADR,FORMAT/DP,FORMAT/SP,INFO/AD,INFO/ADF,INFO/ADR \
