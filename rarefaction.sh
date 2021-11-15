@@ -22,7 +22,7 @@ for i in "${depth[@]}"
 do 
     echo "mpileup for depth $i"
     bcftools mpileup \
-    -Ov \
+    -Ou \
     -f $IN_DIR/phytozome/Athaliana/Araport11/assembly/Athaliana_447_TAIR10.fa \
     -d $i \
     -a FORMAT/AD,FORMAT/ADF,FORMAT/ADR,FORMAT/DP,FORMAT/SP,INFO/AD,INFO/ADF,INFO/ADR \
@@ -31,7 +31,7 @@ do
 	$IN_DIR/20210831_pass_chopped.minimap2.sorted.sam |\
     bcftools call \
     -m -Ov \
-    --threads = 20	\
+    --threads 20	\
     -o $IN_DIR/rarefaction/20210831_rarefaction_$i.vcf
     echo "vcf file for depth $i created"
 done
