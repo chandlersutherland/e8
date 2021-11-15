@@ -11,7 +11,7 @@
 #SBATCH --error=/global/home/users/chandlersutherland/slurm_stderr/slurm-%j.out
 
 module load python
-source activate nanopore
+source activate /global/home/users/chandlersutherland/anaconda3/envs/nanopore
 
 IN_DIR=/global/scratch/users/chandlersutherland/
 TSTAMP=$(date +%Y%m%d-%H%M%S)
@@ -27,7 +27,8 @@ do
     -d $i \
     -a FORMAT/AD,FORMAT/ADF,FORMAT/ADR,FORMAT/DP,FORMAT/SP,INFO/AD,INFO/ADF,INFO/ADR \
     -r Chr1:26148811-26151472 \
-    --threads 20 $IN_DIR/20210831_pass_chopped.minimap2.sorted.sam |\
+    --threads 20 \
+	$IN_DIR/20210831_pass_chopped.minimap2.sorted.sam |\
     bcftools call \
     -m -Ov \
     --threads = 20	\
