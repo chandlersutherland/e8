@@ -20,8 +20,9 @@ IN_DIR=/global/scratch/users/chandlersutherland/nanopore/20211109_CS/S3/20211109
 for dir in $IN_DIR/*/
 do 
 	cd $dir
+	echo $dir 
 	minimap2 -a /global/scratch/users/chandlersutherland/phytozome/Athaliana/Araport11/assembly/Athaliana_447_TAIR10.mmi\
-	${IN_DIR}/${dir}/merged_file.fastq.gz | \
-	samtools sort -o ${IN_DIR}/${dir}/reads.sorted.bam 
-	samtools index ${IN_DIR}/${dir}/reads.sorted.bam
+	${dir}/merged_file.fastq.gz | \
+	samtools sort -o ${dir}/reads.sorted.bam 
+	samtools index ${dir}/reads.sorted.bam
 done
