@@ -1,11 +1,11 @@
 #!/bin/bash
 #SBATCH --job-name=sac_20211109_S3
 #SBATCH --account=ac_kvkallow
-#SBATCH --partition=savio2_gpu
+#SBATCH --partition=savio3_gpu
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
-#SBATCH --cpus-per-task=2
-#SBATCH --gres=gpu:1
+#SBATCH --cpus-per-task=4
+#SBATCH --gres=gpu:GTX2080TI:1
 #SBATCH --time=24:00:00
 #SBATCH --mail-user=chandlersutherland@berkeley.edu
 #SBATCH --mail-type=ALL
