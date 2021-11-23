@@ -8,6 +8,8 @@
 #SBATCH --time=24:00:00
 #SBATCH --mail-user=chandlersutherland@berkeley.edu
 #SBATCH --mail-type=ALL
+#SBATCH --error=/global/home/users/chandlersutherland/slurm_stderr/slurm-%j.out
+#SBATCH --output=/global/home/users/chandlersutherland/slurm_stdout/slurm-%j.out
 
 module load python 
 module load samtools
@@ -21,5 +23,5 @@ do
 	./global/home/users/chandlersutherland/programs/minimap2-2.22_x64-linux/minimap2 -a /global/scratch/users/chandlersutherland/phytozome/Athaliana/Araport11/assembly/Athaliana_447_TAIR10.mmi\
 	${IN_DIR}/${dir}/merged_file.fastq.gz | \
 	samtools sort -o ${IN_DIR}/${dir}/reads.sorted.bam 
-	samtools index reads.sorted.bam
-done 
+	samtools index ${IN_DIR}/${dir}/reads.sorted.bam
+done
