@@ -10,14 +10,15 @@
 #SBATCH --mail-type=ALL
 
 module load python 
-source activate nanopore
+module load samtools
+#source activate nanopore
 
 IN_DIR=/global/scratch/users/chandlersutherland/nanopore/20211109_CS/S3/20211109_1827_MN35019_AIH759_d0d0cd8b/fastq_pass/
 
 for dir in $IN_DIR
 do 
 	cd $dir
-	./minimap2 -a /global/scratch/users/chandlersutherland/phytozome/Athaliana/Araport11/assembly/Athaliana_447_TAIR10.mmi\
+	./global/home/users/chandlersutherland/programs/minimap2-2.22_x64-linux/minimap2 -a /global/scratch/users/chandlersutherland/phytozome/Athaliana/Araport11/assembly/Athaliana_447_TAIR10.mmi\
 	${IN_DIR}/${dir}/merged_file.fastq.gz | \
 	samtools sort -o ${IN_DIR}/${dir}/reads.sorted.bam 
 	samtools index reads.sorted.bam
