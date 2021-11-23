@@ -15,7 +15,7 @@ module load python
 module load samtools
 source activate nanopore
 
-IN_DIR=/global/scratch/users/chandlersutherland/nanopore/20211109_CS/S3/20211109_1827_MN35019_AIH759_d0d0cd8b/fastq_pass/
+IN_DIR=/global/scratch/users/chandlersutherland/nanopore/20211109_CS/S3/20211109_1827_MN35019_AIH759_d0d0cd8b/fastq_pass
 
 for dir in $IN_DIR/*/
 do 
