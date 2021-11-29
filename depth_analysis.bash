@@ -25,7 +25,7 @@ for dir in $IN_DIR/*/
 do 
 	cd $dir
 	echo $dir 
-	barcode=${$dir##*/}
+	barcode=${${dir}##*/}
 	echo $barcode
 	
 	#filter the .bam files to be just the amplicon regions
