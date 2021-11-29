@@ -32,6 +32,6 @@ do
 	samtools view -b -h -L ${AMPLICONS} -o ${OUT_DIR}/${barcode}.region.bam reads.sorted.bam
 
 	#use the innate samtools depth filter to calculate depth for each amplicon
-	samtools depth -b ${AMPLICONS} -o ${DEPTH_DIR}/${barcode}.depth.tsv
+	samtools depth -b ${AMPLICONS} -o ${DEPTH_DIR}/${barcode}.depth.tsv reads.sorted.bam
 
 done
