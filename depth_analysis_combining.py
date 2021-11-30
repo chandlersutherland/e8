@@ -1,20 +1,3 @@
-#!/bin/bash
-#SBATCH --job-name=depth_analysis
-#SBATCH --account=ac_kvkallow
-#SBATCH --partition=savio2
-#SBATCH --qos=savio_normal
-#SBATCH --nodes=1
-#SBATCH --ntasks-per-node=24
-#SBATCH --time=00:30:00
-#SBATCH --mail-user=chandlersutherland@berkeley.edu
-#SBATCH --mail-type=ALL
-#SBATCH --error=/global/home/users/chandlersutherland/slurm_stderr/slurm-%j.out
-#SBATCH --output=/global/home/users/chandlersutherland/slurm_stdout/slurm-%j.out
-
-module load python 
-module load samtools
-source activate nanopore
-
 import os 
 import pandas as pd
 
@@ -37,3 +20,6 @@ for FILE in os.listdir(DEPTH_DIR):
     
     depth['Barcode']= barcode
     pd.concat([depth_file, depth])
+
+depth_file.to_csv('depth_file.tsv') 
+!cp depth_file.tsv DEPTH_DIR/
