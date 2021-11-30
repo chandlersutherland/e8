@@ -43,7 +43,7 @@ do
 	barcode=$(basename $file)
 	echo $barcode
 	
-	bcftools call -m -Ov \
+	bcftools call -mv -Ov \
 	--threads 20 \
 	-o $SNP_DIR/$barcode.vcf \
 	$file 
