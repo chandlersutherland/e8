@@ -21,7 +21,8 @@ for FILE in os.listdir(DEPTH_DIR):
     
     depth['Barcode']= barcode
     pd.concat([depth_file, depth])
+print(depth_file)
+#depth_file.to_csv(DEPTH_DIR+'/concatenated_depth.tsv', sep='\t', index=False)
 
-fh = open(DEPTH_DIR + "/", "w")
-fh.write(depth_file)
-fh.close()
+
+          
