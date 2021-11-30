@@ -20,7 +20,7 @@ MPILEUP_DIR=/global/scratch/users/chandlersutherland/nanopore/20211109_CS/S3/202
 SNP_DIR=/global/scratch/users/chandlersutherland/nanopore/20211109_CS/S3/20211109_1827_MN35019_AIH759_d0d0cd8b/snp
 REF=/global/scratch/users/chandlersutherland/phytozome/Athaliana/Araport11/assembly/Athaliana_447_TAIR10.fa
 
-for file in $IN_DIR/
+for file in $IN_DIR/*
 
 do 
 	barcode=$(basename $file)
@@ -37,7 +37,7 @@ do
 	echo "mpileup for $barcode created" 
 done
 
-for file in $MPILEUP_DIR/
+for file in $MPILEUP_DIR/*
 
 do 
 	barcode=$(basename $file)
