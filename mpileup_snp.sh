@@ -34,7 +34,7 @@ do
 	-a FORMAT/AD,FORMAT/ADF,FORMAT/ADR,FORMAT/DP,FORMAT/SP,INFO/AD,INFO/ADF,INFO/ADR \
 	$file
 	
-	echo("mpileup for $barcode created") 
+	echo "mpileup for $barcode created" 
 done
 
 for file in $MPILEUP_DIR/*/
@@ -48,5 +48,5 @@ do
 	-o $SNP_DIR/$barcode.vcf \
 	file 
 	
-	echo("snp file for $barcode created")
+	echo "snp file for $barcode created"
 done	
