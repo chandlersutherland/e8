@@ -7,7 +7,7 @@ amp_position = pd.read_csv(AMPLICONS, sep='\t', header=0, names=['Chromosome', '
 
 depth_file = pd.DataFrame()
 for FILE in os.listdir(DEPTH_DIR):
-	basename = os.path.basename(FILE)
+    basename = os.path.basename(FILE)
     barcode = basename.split(".")[0]
     depth=pd.read_csv(FILE, sep='\t', header=None, names=['Chromosome', 'Position', 'depth'], index_col=False)
     depth['Marker']=''
