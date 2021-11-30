@@ -6,6 +6,7 @@ AMPLICONS='/global/scratch/users/chandlersutherland/nanopore/amplicons.bed'
 amp_position = pd.read_csv(AMPLICONS, sep='\t', header=0, names=['Chromosome', 'start', 'end', 'marker', 'code'], index_col=False)
 
 depth_file = pd.DataFrame()
+os.chdir(DEPTH_DIR)
 for FILE in os.listdir(DEPTH_DIR):
     basename = os.path.basename(FILE)
     barcode = basename.split(".")[0]
