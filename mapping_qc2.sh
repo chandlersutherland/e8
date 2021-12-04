@@ -27,6 +27,6 @@ do
 	#use samtools stats to get the number of mapped reads 
 	mapped_number=$(samtools stats $file | grep "reads mapped:" | awk '{print $4}')
 	echo $mapped_number
-	echo $barcode $'\t' $mapped_number >> ${OUT_DIR}/mapping_stats.tsv 
+	echo $barcode $'\t' $mapped_number >> ${IN_DIR}/mapping_stats.tsv 
 
 done
