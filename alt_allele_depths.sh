@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=mapping_qc
+#SBATCH --job-name=alt_allele_freq
 #SBATCH --account=ac_kvkallow
 #SBATCH --partition=savio2
 #SBATCH --qos=savio_normal
@@ -25,7 +25,7 @@ for file in $IN_DIR/*
 
 do 
 	barcode=$(basename $file .region.bam)
-	echo barcode 
+	echo $barcode 
 	#first, create a vcf file with all the variants still there (-A flag after -m multivariate caller)
 	bcftools mpileup \
 	-f $REF \
