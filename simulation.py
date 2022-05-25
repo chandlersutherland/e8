@@ -52,10 +52,10 @@ def simulator(i):
   return stats
   
 summary = pd.DataFrame(columns = ['iterations', 'sequenceable count', 'mean vaf', 'max vaf'])
-for i in range(1, 10000, 10):
+for i in range(1, 10000, 100):
     sim = simulator(i)
     summary = summary.append(sim, ignore_index=True)
     print(sim)
   
 summary.to_csv('mcmc_summary.csv')
-!cp mcmc_summary.csv
+#!cp mcmc_summary.csv
